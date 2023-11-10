@@ -1,0 +1,9 @@
+{
+    "version": "1.0",
+    "identifier": "bouncy",
+    "name": "Bouncy Window",
+    "callbacks": [
+        "testCallback"
+    ],
+    "useRender": true
+}
