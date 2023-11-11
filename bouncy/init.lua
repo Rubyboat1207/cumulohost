@@ -3,7 +3,7 @@ Handle = getCurrentHandle()
 setHudWindowName(Handle, "Gamer Time")
 
 setWidth(Handle, 200)
-setHeight(Handle, 700)
+setHeight(Handle, 400)
 
 local textIdent = "testText"
 local buttonIdent = "button"
@@ -26,3 +26,6 @@ setWidgetY(Handle, textIdent, 105)
 
 setPersistentFloat(Handle, "XDirection", 500)
 setPersistentFloat(Handle, "YDirection", 500)
+
+setX(Handle, 730)
+setY(Handle, 400)
