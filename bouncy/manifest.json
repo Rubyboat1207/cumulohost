@@ -2,6 +2,7 @@
     "version": "v1.1",
     "identifier": "bouncy",
     "name": "Bouncy Window",
+    "description": "This was the first extension ever developed for the cumulo platform",
     "callbacks": [
         "testCallback"
     ],
