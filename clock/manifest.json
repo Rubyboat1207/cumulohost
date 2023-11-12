@@ -1,0 +1,9 @@
+{
+    "version": "alpha1.0",
+    "identifier": "clock",
+    "name": "Bouncy Window",
+    "callbacks": [
+    ],
+    "useRender": true,
+    "usePrerender": false
+}
