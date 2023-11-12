@@ -4,6 +4,7 @@
     "name": "Window Clock",
     "description": "Tracks the time you spend on various windows"
     "callbacks": [
+        "toggleSettings"
     ],
     "useRender": true,
     "usePrerender": false
