@@ -1,7 +1,8 @@
 {
     "version": "alpha1.0",
     "identifier": "clock",
-    "name": "Bouncy Window",
+    "name": "Window Clock",
+    "description": "Tracks the time you spend on various windows"
     "callbacks": [
     ],
     "useRender": true,
