@@ -2,7 +2,7 @@
     "version": "alpha1.0",
     "identifier": "clock",
     "name": "Window Clock",
-    "description": "Tracks the time you spend on various windows"
+    "description": "Tracks the time you spend on various windows",
     "callbacks": [
         "toggleSettings"
     ],
