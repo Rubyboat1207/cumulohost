@@ -5,14 +5,14 @@ local path = getfocusedWindowFileName()
 local isInConfigScreen = getPersistentBoolean(Handle, "isInConfigScreen")
 local dt = getDeltaTime()
 
-function AddTime() 
-    local pathident = "path_"..path
-    local windowident = "window_"..window
+function AddTime()
+    local pathident = "path_" .. path
+    local windowident = "window_" .. window
 
     local secondsSpentOnPath = getPersistentFloat(Handle, pathident)
     local secondsSpentOnWindow = getPersistentFloat(Handle, windowident)
 
-    
+
     if secondsSpentOnPath == nil then
         setPersistentFloat(Handle, pathident, 0)
         secondsSpentOnPath = 0
@@ -28,13 +28,13 @@ function AddTime()
     secondsSpentOnPath = secondsSpentOnPath + dt
 
     setPersistentFloat(Handle, pathident, secondsSpentOnPath)
-    if not getPersistentBoolean(Handle, "useExeTime") or (
-        getPersistentBoolean(Handle, "useExeTime") and getPersistentBoolean(Handle, "recordWindowTitles")
-    ) then
+    if getPersistentBoolean(Handle, "recordWindowTitles") or
+        (not getPersistentBoolean(Handle, "useExeTime")) then
         setPersistentFloat(Handle, windowident, secondsSpentOnWindow)
     end
 
-    
+
+
     if getPersistentBoolean(Handle, "useExeTime") then
         return secondsSpentOnPath
     else
@@ -42,7 +42,7 @@ function AddTime()
     end
 end
 
-function RenderNormalScreen() 
+function RenderNormalScreen()
     local textIdent = "testText"
     local timeident = "time"
 
@@ -63,10 +63,10 @@ function RenderNormalScreen()
     local seconds = "" .. (math.floor(s) % 60)
 
     if string.len(hours) == 1 then
-        hours = "0" .. hours 
+        hours = "0" .. hours
     end
     if string.len(minutes) == 1 then
-        minutes = "0" .. minutes 
+        minutes = "0" .. minutes
     end
     if string.len(seconds) == 1 then
         seconds = "0" .. seconds
@@ -91,7 +91,7 @@ function RenderNormalScreen()
         end
 
         xpos = clamp(xpos + 50 * dt * pad_dir, min, max)
-        
+
         setWidgetX(Handle, textIdent, xpos)
     else
         setWidgetX(Handle, textIdent, 10)
@@ -101,5 +101,9 @@ end
 
 if not isInConfigScreen then
     RenderNormalScreen()
+else
+    local trackingMethodCheckboxIdent = 'trackmethod'
+
+    setPersistentBoolean(Handle, "useExeTime", getCheckboxChecked(Handle, trackingMethodCheckboxIdent))
 end
 

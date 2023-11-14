@@ -5,6 +5,7 @@ local isConfig = getPersistentBoolean(Handle, "isInConfigScreen")
 local textIdent = "testText"
 local timeident = "time"
 local configbuttonident = "configbutton"
+local trackingMethodCheckboxIdent = 'trackmethod'
 
 
 isConfig = not isConfig
@@ -19,6 +20,8 @@ if isConfig then
     setWidgetHidden(Handle, textIdent, true)
     setWidgetHidden(Handle, timeident, true)
 
+    setWidgetHidden(Handle, trackingMethodCheckboxIdent, false)
+
     setButtonWidgetLabel(Handle, configbuttonident, "Close Config")
 else
     w = 250
@@ -26,6 +29,8 @@ else
 
     setWidgetHidden(Handle, textIdent, false)
     setWidgetHidden(Handle, timeident, false)
+    
+    setWidgetHidden(Handle, trackingMethodCheckboxIdent, true)
 
     setButtonWidgetLabel(Handle, configbuttonident, "Open Settings")
 end

@@ -4,8 +4,13 @@ setHudWindowName(Handle, "ClockTest")
 
 setPersistentFloat(Handle, "paddingDirection", -1)
 setPersistentBoolean(Handle, "isInConfigScreen", false)
-setPersistentBoolean(Handle, "useExeTime", true)
-setPersistentBoolean(Handle, "recordWindowTitles", false)
+
+if not persistentBooleanExists(Handle, "useExeTime") then
+    setPersistentBoolean(Handle, "useExeTime", true)
+end
+if not persistentBooleanExists(Handle, "recordWindowTitles") then
+    setPersistentBoolean(Handle, "recordWindowTitles", false)
+end
 
 local textIdent = "testText"
 
@@ -47,3 +52,14 @@ setButtonOnClick(Handle, configbuttonident, "toggleSettings")
 
 setWidgetWidth(Handle, configbuttonident, calculateTextWidth("Open Settings") + 10)
 setWidgetHeight(Handle, configbuttonident, calculateTextHeight("Open Settings"))
+
+local trackingMethodCheckboxIdent = 'trackmethod'
+
+addCheckboxWidget(Handle, trackingMethodCheckboxIdent, 0)
+
+setWidgetX(Handle, trackingMethodCheckboxIdent, 10)
+setWidgetY(Handle, trackingMethodCheckboxIdent, 45)
+
+setCheckboxLabel(Handle, trackingMethodCheckboxIdent, "Use executable path instead of window title")
+setCheckboxChecked(Handle, trackingMethodCheckboxIdent, getPersistentBoolean(Handle, "useExeTime")==true)
+setWidgetHidden(Handle, trackingMethodCheckboxIdent, true)
