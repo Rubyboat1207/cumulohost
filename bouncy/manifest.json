@@ -7,5 +7,6 @@
         "testCallback"
     ],
     "useRender": true,
-    "usePrerender": false
+    "usePrerender": false,
+    "categories": [ "fun" ]
 }
