@@ -7,5 +7,6 @@
         "toggleSettings"
     ],
     "useRender": true,
-    "usePrerender": false
+    "usePrerender": false,
+    "categories": [ "time_tracking", "utility" ]
 }
