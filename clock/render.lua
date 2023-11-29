@@ -53,8 +53,8 @@ function RenderNormalScreen()
     setTextWidgetContent(Handle, textIdent, window)
     local defaultX = 10
 
-    local winlen = calculateTextWidth(window)
-    local width = getWidth(Handle)
+    local textWidth = calculateTextWidth(window) + 10
+    local screenWidth = getWidth(Handle)
 
     local s = AddTime()
 
@@ -74,10 +74,10 @@ function RenderNormalScreen()
 
     setTextWidgetContent(Handle, timeident, hours .. ":" .. minutes .. ":" .. seconds)
 
-    if winlen > width then
+    if textWidth > screenWidth then
         local pad_dir = getPersistentFloat(Handle, "paddingDirection")
 
-        local compensateDist = winlen - width
+        local compensateDist = textWidth - screenWidth
         local xpos = getWidgetX(Handle, textIdent)
 
         local extraDist = 10

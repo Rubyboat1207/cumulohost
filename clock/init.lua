@@ -15,7 +15,7 @@ end
 local textIdent = "testText"
 
 local w = 250
-local h = 70
+local h = 80
 local offset = 35
 
 setWidth(Handle, w)
@@ -27,7 +27,7 @@ setY(Handle, getScreenHeight() - (h + 50 + offset))
 addTextWidget(Handle, textIdent, 0)
 
 setWidgetX(Handle, textIdent, 10)
-setWidgetY(Handle, textIdent, 22)
+setWidgetY(Handle, textIdent, 24)
 
 setTextWidgetContent(Handle, textIdent, "Loading...")
 
@@ -36,7 +36,7 @@ local timeident = "time"
 addTextWidget(Handle, timeident, 0)
 
 setWidgetX(Handle, timeident, 10)
-setWidgetY(Handle, timeident, 42)
+setWidgetY(Handle, timeident, 47)
 
 setTextWidgetContent(Handle, timeident, "Loading...")
 
@@ -44,8 +44,8 @@ local configbuttonident = "configbutton"
 
 addButtonWidget(Handle, configbuttonident, 0)
 
-setWidgetX(Handle, configbuttonident, 150)
-setWidgetY(Handle, configbuttonident, h - 31)
+setWidgetX(Handle, configbuttonident, 140)
+setWidgetY(Handle, configbuttonident, h - 34)
 
 setButtonWidgetLabel(Handle, configbuttonident, "Open Settings")
 setButtonOnClick(Handle, configbuttonident, "toggleSettings")
