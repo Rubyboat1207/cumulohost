@@ -1,7 +1,7 @@
 {
     "version": "alpha-1.0",
     "identifier": "empower-missings",
-    "name": "Assignmnet",
+    "name": "Empower Monitor",
     "description": "Keep track of your missing assignments",
     "callbacks": [ "toggleconf", "onSocresRecieved", "onStudentMissingGet"],
     "useRender": true,
