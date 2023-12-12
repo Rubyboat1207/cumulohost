@@ -3,7 +3,7 @@
     "identifier": "empower-missings",
     "name": "Empower Monitor",
     "description": "Keep track of your missing assignments",
-    "callbacks": [ "toggleconf", "onSocresRecieved", "onStudentMissingGet"],
+    "callbacks": [ "toggleconf", "onSocresRecieved", "onStudentMissingGet", "onStudentHomeGet" ],
     "useRender": true,
     "usePrerender": false,
     "categories": [
